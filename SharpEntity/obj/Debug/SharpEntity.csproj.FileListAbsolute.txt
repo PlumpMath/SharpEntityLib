@@ -1,0 +1,5 @@
+C:\SharpEntityLib\SharpEntity\bin\Debug\SharpEntity.dll
+C:\SharpEntityLib\SharpEntity\bin\Debug\SharpEntity.pdb
+C:\SharpEntityLib\SharpEntity\obj\Debug\SharpEntity.dll
+C:\SharpEntityLib\SharpEntity\obj\Debug\SharpEntity.pdb
+C:\SharpEntityLib\SharpEntity\obj\Debug\SharpEntity.csprojResolveAssemblyReference.cache

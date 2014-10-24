@@ -1,0 +1,8 @@
+C:\SharpEntityLib\InteractionFactoryConsoleTest\bin\Debug\InteractionFactoryConsoleTest.exe.config
+C:\SharpEntityLib\InteractionFactoryConsoleTest\bin\Debug\InteractionFactoryConsoleTest.exe
+C:\SharpEntityLib\InteractionFactoryConsoleTest\bin\Debug\InteractionFactoryConsoleTest.pdb
+C:\SharpEntityLib\InteractionFactoryConsoleTest\bin\Debug\SharpEntity.dll
+C:\SharpEntityLib\InteractionFactoryConsoleTest\bin\Debug\SharpEntity.pdb
+C:\SharpEntityLib\InteractionFactoryConsoleTest\obj\Debug\InteractionFactoryConsoleTest.csprojResolveAssemblyReference.cache
+C:\SharpEntityLib\InteractionFactoryConsoleTest\obj\Debug\InteractionFactoryConsoleTest.exe
+C:\SharpEntityLib\InteractionFactoryConsoleTest\obj\Debug\InteractionFactoryConsoleTest.pdb

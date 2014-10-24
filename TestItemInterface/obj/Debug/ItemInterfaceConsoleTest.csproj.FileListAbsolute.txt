@@ -1,0 +1,8 @@
+C:\SharpEntityLib\TestItemInterface\bin\Debug\TestItemInterface.exe.config
+C:\SharpEntityLib\TestItemInterface\obj\Debug\ItemInterfaceConsoleTest.csprojResolveAssemblyReference.cache
+C:\SharpEntityLib\TestItemInterface\bin\Debug\TestItemInterface.exe
+C:\SharpEntityLib\TestItemInterface\bin\Debug\TestItemInterface.pdb
+C:\SharpEntityLib\TestItemInterface\bin\Debug\SharpEntity.dll
+C:\SharpEntityLib\TestItemInterface\bin\Debug\SharpEntity.pdb
+C:\SharpEntityLib\TestItemInterface\obj\Debug\TestItemInterface.exe
+C:\SharpEntityLib\TestItemInterface\obj\Debug\TestItemInterface.pdb

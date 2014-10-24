@@ -1,0 +1,15 @@
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\EntityTestGUI.csprojResolveAssemblyReference.cache
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\mainwindow.baml
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\mainwindow.g.cs
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\App.g.cs
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\ExcelItemGenerator_MarkupCompile.cache
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\ExcelItemGenerator.g.resources
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\ExcelItemGenerator.Properties.Resources.resources
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\EntityTestGUI.csproj.GenerateResource.Cache
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\ExcelItemGenerator.exe
+C:\SharpEntityLib\ExcelItemGenerator\bin\Debug\ExcelItemGenerator.exe.config
+C:\SharpEntityLib\ExcelItemGenerator\bin\Debug\ExcelItemGenerator.exe
+C:\SharpEntityLib\ExcelItemGenerator\bin\Debug\ExcelItemGenerator.pdb
+C:\SharpEntityLib\ExcelItemGenerator\bin\Debug\SharpEntity.dll
+C:\SharpEntityLib\ExcelItemGenerator\bin\Debug\SharpEntity.pdb
+C:\SharpEntityLib\ExcelItemGenerator\obj\Debug\ExcelItemGenerator.pdb

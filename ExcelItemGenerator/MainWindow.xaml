@@ -1,0 +1,309 @@
+﻿<Window x:Name="ItemGenerator_SharpItemLib" x:Class="ExcelItemGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Item Generator - SharpItemLib" Height="645" Width="802" Closing="ItemGenerator_SharpItemLib_Closing" MinWidth="664" MinHeight="481" WindowStyle="None" Background="Transparent" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.39,0.338">
+        <Grid.Background>
+            <SolidColorBrush Color="White"/>
+        </Grid.Background>
+        <Grid x:Name="DisplayGrid" Margin="10,10,211,11" Background="Black">
+            <Grid x:Name="InventoryGrid" Margin="10,382,10,10">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF818181" Offset="0"/>
+                        <GradientStop Color="#FF363636" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <StatusBarItem x:Name="InventoryRarityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,33,403,174" Content="Rarity:"/>
+                <StatusBarItem x:Name="InventoryRarityString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,33,382,174" Content="Rarity"/>
+                <StatusBarItem x:Name="InventoryIDLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,52,403,155" Content="ID:"/>
+                <StatusBarItem x:Name="InventoryIDString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,52,382,155" Content="ID"/>
+                <StatusBarItem x:Name="InventoryLevelLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,71,403,136" Content="Level:"/>
+                <StatusBarItem x:Name="InventoryLevelString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,71,382,136" Content="Level"/>
+                <StatusBarItem x:Name="InventoryNameLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,90,403,117" Content="Name:"/>
+                <StatusBarItem x:Name="InventoryNameString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,90,382,117" Content="Name"/>
+                <StatusBarItem x:Name="InventoryClassIndexLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,109,403,97" Content="Class:"/>
+                <StatusBarItem x:Name="InventoryClassIndexString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,109,382,97" Content="Class"/>
+                <StatusBarItem x:Name="InventoryValueLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,128,403,78" Content="Value:"/>
+                <StatusBarItem x:Name="InventoryValueString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,128,382,78" Content="Value"/>
+                <StatusBarItem x:Name="InventoryStrengthLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,147,403,59" Content="STR:"/>
+                <StatusBarItem x:Name="InventoryStrengthString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,147,382,59" Content="Strength"/>
+                <StatusBarItem x:Name="InventoryDexterityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,166,403,40" Content="DEX:"/>
+                <StatusBarItem x:Name="InventoryDexterityString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,166,382,40" Content="Dexterity"/>
+                <StatusBarItem x:Name="InventoryIntelligenceLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,185,403,21" Content="INT:"/>
+                <StatusBarItem x:Name="InventoryIntelligenceString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,185,382,21" Content="Intelligence"/>
+                <StatusBarItem x:Name="InventoryVitalityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="7,204,403,2" Content="VIT:"/>
+                <StatusBarItem x:Name="InventoryVitalityString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="41,204,382,2" Content="Vitality"/>
+                <TextBlock x:Name="InventoryGridBlock" HorizontalAlignment="Left" Margin="10,4,0,0" TextWrapping="Wrap" Text="Inventory" VerticalAlignment="Top" Height="35" Width="110" FontSize="24" Foreground="White"/>
+                <ListView x:Name="InventoryListBox" Margin="189,10,10,50" SelectionChanged="InventoryListBox_SelectionChanged"/>
+                <Button x:Name="AddItemButton" Content="Add Item" Margin="454,192,10,10" RenderTransformOrigin="-0.44,-0.467" Click="AddItemButton_Click"/>
+                <Button x:Name="EquipItemButton" Content="Equip Item" Margin="189,192,275,10" RenderTransformOrigin="-0.44,-0.467" Click="EquipItemButton_Click"/>
+                <Button x:Name="RemoveItemButton" Content="Remove Item" Margin="352,192,112,10" RenderTransformOrigin="-0.44,-0.467" Click="RemoveItemButton_Click"/>
+            </Grid>
+            <Grid x:Name="CharacterGrid" Margin="10,10,10,252">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF9661B0" Offset="0"/>
+                        <GradientStop Color="#FF4B2863" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <TextBlock x:Name="CharacterGridBlock" HorizontalAlignment="Left" Margin="10,4,0,0" TextWrapping="Wrap" Text="Character" VerticalAlignment="Top" Height="35" Width="110" FontSize="24" Foreground="White"/>
+                <StatusBarItem x:Name="CharacterHeadLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,117,482,220" Content="Head:"/>
+                <StatusBarItem x:Name="CharacterShouldersLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,136,482,201" Content="Shoulders:"/>
+                <StatusBarItem x:Name="CharacterChestLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,155,482,182" Content="Chest:"/>
+                <StatusBarItem x:Name="CharacterBracersLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,174,482,163" Content="Bracers:"/>
+                <StatusBarItem x:Name="CharacterGlovesLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,193,482,144" Content="Gloves:"/>
+                <StatusBarItem x:Name="CharacterPantsLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,212,482,125" Content="Pants:"/>
+                <StatusBarItem x:Name="CharacterBootsLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,231,482,106" Content="Boots:"/>
+                <StatusBarItem x:Name="CharacterNeckLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,250,482,87" Content="Neck:"/>
+                <StatusBarItem x:Name="CharacterRing1Label" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,269,482,68" Content="Ring 1:"/>
+                <StatusBarItem x:Name="CharacterRing2Label" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,288,482,49" Content="Ring 2:"/>
+                <StatusBarItem x:Name="CharacterOffHandLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,307,482,30" Content="OffHand:"/>
+                <ListBox x:Name="CharacterIDListBox" HorizontalAlignment="Left" Height="234" Margin="79,118,0,0" VerticalAlignment="Top" Width="66" Background="Transparent" BorderBrush="#01FFFFFF" RenderTransformOrigin="0.5,0.5" FontSize="14" Foreground="White">
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                    <ListBoxItem Content="ID" FontSize="14"/>
+                </ListBox>
+                <StatusBarItem x:Name="CharacterItemTypeLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,88,482,249" Content="Item Type"/>
+                <StatusBarItem x:Name="CharacterSelectedIDLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="79,88,416,249" Content="ID"/>
+                <StatusBarItem x:Name="CharacterSelectedRarityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,88,371,249" Content="Rarity"/>
+                <StatusBarItem x:Name="CharacterSelectedStrLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,88,178,249" Content="STR"/>
+                <StatusBarItem x:Name="CharacterSelectedDexLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,88,130,249" Content="DEX"/>
+                <StatusBarItem x:Name="CharacterSelectedIntLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,88,82,249" Content="INT"/>
+                <StatusBarItem x:Name="CharacterSelectedVitLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,88,34,249" Content="VIT"/>
+                <StatusBarItem x:Name="CharacterHeadRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,117,362,220" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterShouldersRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,136,362,201" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterChestRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,155,362,182" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBracersRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,174,362,163" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterGlovesRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,193,362,144" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterPantsRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,212,362,125" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBootsRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,231,362,106" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterNeckRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,250,362,87" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing1RarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,269,362,68" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing2RarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,288,362,49" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterOffHandRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,307,362,30" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterHeadStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,117,183,220" Content="0"/>
+                <StatusBarItem x:Name="CharacterShouldersStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,136,183,201" Content="0"/>
+                <StatusBarItem x:Name="CharacterChestStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,155,183,182" Content="0"/>
+                <StatusBarItem x:Name="CharacterBracersStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,174,183,163" Content="0"/>
+                <StatusBarItem x:Name="CharacterGlovesStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,193,183,144" Content="0"/>
+                <StatusBarItem x:Name="CharacterPantsStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,212,183,125" Content="0"/>
+                <StatusBarItem x:Name="CharacterBootsStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,231,183,106" Content="0"/>
+                <StatusBarItem x:Name="CharacterNeckStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,250,183,87" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing1StrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,269,183,68" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing2StrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,288,183,49" Content="0"/>
+                <StatusBarItem x:Name="CharacterOffHandStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,307,183,30" Content="0"/>
+                <StatusBarItem x:Name="CharacterHeadDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,117,135,220" Content="0"/>
+                <StatusBarItem x:Name="CharacterShouldersDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,136,135,201" Content="0"/>
+                <StatusBarItem x:Name="CharacterChestDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,155,135,182" Content="0"/>
+                <StatusBarItem x:Name="CharacterBracersDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,174,135,163" Content="0"/>
+                <StatusBarItem x:Name="CharacterGlovesDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,193,135,144" Content="0"/>
+                <StatusBarItem x:Name="CharacterPantsDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,212,135,125" Content="0"/>
+                <StatusBarItem x:Name="CharacterBootsDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,231,135,106" Content="0"/>
+                <StatusBarItem x:Name="CharacterNeckDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,250,135,87" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing1DexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,269,135,68" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing2DexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,288,135,49" Content="0"/>
+                <StatusBarItem x:Name="CharacterOffHandDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,307,135,30" Content="0"/>
+                <StatusBarItem x:Name="CharacterHeadIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,117,87,220" Content="0"/>
+                <StatusBarItem x:Name="CharacterShouldersIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,136,87,201" Content="0"/>
+                <StatusBarItem x:Name="CharacterChestIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,155,87,182" Content="0"/>
+                <StatusBarItem x:Name="CharacterBracersIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,174,87,163" Content="0"/>
+                <StatusBarItem x:Name="CharacterGlovesIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,193,87,144" Content="0"/>
+                <StatusBarItem x:Name="CharacterPantsIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,212,87,125" Content="0"/>
+                <StatusBarItem x:Name="CharacterBootsIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,231,87,106" Content="0"/>
+                <StatusBarItem x:Name="CharacterNeckIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,250,87,87" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing1IntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,269,87,68" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing2IntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,288,87,49" Content="0"/>
+                <StatusBarItem x:Name="CharacterOffHandIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,307,87,30" Content="0"/>
+                <StatusBarItem x:Name="CharacterHeadVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,117,39,220" Content="0"/>
+                <StatusBarItem x:Name="CharacterShouldersVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,136,39,201" Content="0"/>
+                <StatusBarItem x:Name="CharacterChestVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,155,39,182" Content="0"/>
+                <StatusBarItem x:Name="CharacterBracersVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,174,39,163" Content="0"/>
+                <StatusBarItem x:Name="CharacterGlovesVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,193,39,144" Content="0"/>
+                <StatusBarItem x:Name="CharacterPantsVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,212,39,125" Content="0"/>
+                <StatusBarItem x:Name="CharacterBootsVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,231,39,106" Content="0"/>
+                <StatusBarItem x:Name="CharacterNeckVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,250,39,87" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing1VitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,269,39,68" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing2VitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,288,39,49" Content="0"/>
+                <StatusBarItem x:Name="CharacterOffHandVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,307,39,30" Content="0"/>
+                <StatusBarItem x:Name="CharacterWeaponLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,325,482,12" Content="Weapon:"/>
+                <StatusBarItem x:Name="CharacterWeaponRarityBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,325,362,12" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterWeaponStrBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,325,183,12" Content="0"/>
+                <StatusBarItem x:Name="CharacterWeaponDexBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="391,325,135,12" Content="0"/>
+                <StatusBarItem x:Name="CharacterWeaponIntBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="439,325,87,12" Content="0"/>
+                <StatusBarItem x:Name="CharacterWeaponVitBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="487,325,39,12" Content="0"/>
+                <StatusBarItem x:Name="CharacterSelectedValueLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,88,322,249" Content="Value"/>
+                <StatusBarItem x:Name="CharacterSelectedDamageLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="245,88,264,249" Content="Damage" RenderTransformOrigin="0.5,0.5">
+                    <StatusBarItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.95"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </StatusBarItem.RenderTransform>
+                </StatusBarItem>
+                <StatusBarItem x:Name="CharacterSelectedArmorLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,88,226,249" Content="Armor"/>
+                <StatusBarItem x:Name="CharacterHeadValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,117,314,220" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterShouldersValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,136,314,201" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterChestValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,155,314,182" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBracersValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,174,314,163" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterGlovesValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,193,314,144" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterPantsValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,212,314,125" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBootsValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,231,314,106" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterNeckValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,250,314,87" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing1ValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,269,314,68" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing2ValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,288,314,49" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterOffHandValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,307,314,30" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterHeadDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,117,266,220" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterShouldersDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,136,266,201" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterChestDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,155,266,182" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBracersDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,174,266,163" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterGlovesDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,193,266,144" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterPantsDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,212,266,125" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBootsDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,231,266,106" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterNeckDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,250,266,87" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing1DamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,269,266,68" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing2DamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,288,266,49" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterOffHandDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,307,266,30" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterHeadArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,117,218,220" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterShouldersArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,136,218,201" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterChestArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,155,218,182" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBracersArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,174,218,163" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterGlovesArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,193,218,144" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterPantsArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,212,218,125" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterBootsArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,231,218,106" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterNeckArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,250,218,87" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing1ArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,269,218,68" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterRing2ArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,288,218,49" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterOffHandArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,307,218,30" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterWeaponValueBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="199,325,314,12" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterWeaponDamageBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="247,325,266,12" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterWeaponArmorBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="295,325,218,12" Content="00.0 %"/>
+                <StatusBarItem x:Name="CharacterHitPoints" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,51,178,286" Content="HP"/>
+                <StatusBarItem x:Name="CharacterPowerLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,32,371,305" Content="Power"/>
+                <StatusBarItem x:Name="CharacterDefenseLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="343,32,163,305" Content="Defense"/>
+                <StatusBarItem x:Name="CharacterAgilityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,51,371,286" Content="Agility"/>
+                <StatusBarItem x:Name="CharacterLevelLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="150,13,371,324" Content="LVL"/>
+                <StatusBarItem x:Name="CharacterPowerString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="190,32,266,305" Content="0"/>
+                <StatusBarItem x:Name="CharacterAgilityString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="190,51,266,286" Content="0"/>
+                <StatusBarItem x:Name="CharacterDefenseString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="396,32,82,305" Content="0"/>
+                <StatusBarItem x:Name="CharacterHitPointsString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="396,51,82,286" Content="0"/>
+                <StatusBarItem x:Name="CharacterSelectedLevelLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,88,5,249" Content="Lv."/>
+                <StatusBarItem x:Name="CharacterHeadLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,117,9,220" Content="0"/>
+                <StatusBarItem x:Name="CharacterShouldersLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,136,9,201" Content="0"/>
+                <StatusBarItem x:Name="CharacterChestLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,155,9,182" Content="0"/>
+                <StatusBarItem x:Name="CharacterBracersLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,174,9,163" Content="0"/>
+                <StatusBarItem x:Name="CharacterGlovesLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,193,9,144" Content="0"/>
+                <StatusBarItem x:Name="CharacterPantsLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,212,9,125" Content="0"/>
+                <StatusBarItem x:Name="CharacterBootsLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,231,9,106" Content="0"/>
+                <StatusBarItem x:Name="CharacterNeckLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,250,9,87" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing1LevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,269,9,68" Content="0"/>
+                <StatusBarItem x:Name="CharacterRing2LevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,288,9,49" Content="0"/>
+                <StatusBarItem x:Name="CharacterOffHandLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,307,9,30" Content="0"/>
+                <StatusBarItem x:Name="CharacterWeaponLevelBlock" Foreground="#fff" HorizontalContentAlignment="Left" Margin="526,325,9,12" Content="0"/>
+                <StatusBarItem x:Name="CharacterLevelString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="190,13,266,324" Content="0"/>
+
+            </Grid>
+        </Grid>
+        <Grid x:Name="ExcelGrid" Height="190" VerticalAlignment="Top" Background="#FF008641" HorizontalAlignment="Right" Width="190" Margin="0,10,10,0">
+            <TextBlock x:Name="ExcelGridBlock" HorizontalAlignment="Left" Margin="10,4,0,0" TextWrapping="Wrap" Text="Excel  " VerticalAlignment="Top" Height="35" Width="58" FontSize="24" Foreground="White"/>
+            <TextBox x:Name="NumItemsExcelBox" HorizontalAlignment="Left" Height="23" Margin="10,115,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="170" TextChanged="NumItemsExcelBox_TextChanged" KeyDown="NumItemsExcelBox_KeyDown"/>
+            <Button x:Name="GenerateExcelButton" Content="Generate" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="30" Click="GenerateExcelButton_Click"/>
+            <TextBlock x:Name="NumItemsExcelBlock" HorizontalAlignment="Left" Margin="10,96,0,0" TextWrapping="Wrap" Text="Number of items to generate:" VerticalAlignment="Top" Width="180" Foreground="White"/>
+            <TextBlock x:Name="ExcelLoadingPercentageBlock" HorizontalAlignment="Left" Margin="51,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="76" FontSize="26"/>
+            <Button x:Name="CloseButton" Margin="153,5,5,0" VerticalAlignment="Top" Height="30" Click="CloseButton_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red" Offset="1"/>
+                        <GradientStop Color="#FFFF9494"/>
+                        <GradientStop Color="#FFFF2020" Offset="0.527"/>
+                        <GradientStop Color="#FFFF6262" Offset="0.498"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Image Source="Icons/close.ico"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="ItemGrid" HorizontalAlignment="Right" Width="190" Margin="0,200,10,10" Background="#FF2D2D30">
+            <TextBlock x:Name="ItemGridBlock" HorizontalAlignment="Left" Margin="10,4,0,0" TextWrapping="Wrap" Text="Item" VerticalAlignment="Top" Height="35" Width="58" FontSize="24" Foreground="White"/>
+            <Button x:Name="GenerateItemButton" Content="Generate" Margin="10,0,10,10" Click="GenerateItemButton_Click" Height="30" VerticalAlignment="Bottom"/>
+            <StatusBarItem x:Name="IDLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,57,130,353" Content="ID:"/>
+            <StatusBarItem x:Name="IDString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,57,10,353" Content="ID"/>
+            <StatusBarItem x:Name="NameLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,95,130,315" Content="Name:"/>
+            <StatusBarItem x:Name="NameString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,95,10,315" Content="Name"/>
+            <StatusBarItem x:Name="ClassIndexLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,114,130,296" Content="Class:"/>
+            <StatusBarItem x:Name="ClassIndexString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,114,10,296" Content="Class"/>
+            <StatusBarItem x:Name="ValueLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,133,130,277" Content="Value:"/>
+            <StatusBarItem x:Name="ValueString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,133,10,277" Content="Value"/>
+            <StatusBarItem x:Name="StrengthLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,152,130,258" Content="STR:"/>
+            <StatusBarItem x:Name="StrengthString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,152,10,258" Content="Strength"/>
+            <StatusBarItem x:Name="DexterityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,171,130,239" Content="DEX:"/>
+            <StatusBarItem x:Name="DexterityString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,171,10,239" Content="Dexterity"/>
+            <StatusBarItem x:Name="IntelligenceLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,190,130,220" Content="INT:"/>
+            <StatusBarItem x:Name="IntelligenceString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,190,10,220" Content="Intelligence"/>
+            <StatusBarItem x:Name="VitalityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,209,130,201" Content="VIT:"/>
+            <StatusBarItem x:Name="VitalityString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,209,10,201" Content="Vitality"/>
+            <StatusBarItem x:Name="RarityLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,38,130,372" Content="Rarity:"/>
+            <StatusBarItem x:Name="RarityString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,38,10,372" Content="Rarity"/>
+            <CheckBox x:Name="RandomItemCheckBox" Content="Random" HorizontalAlignment="Left" Margin="10,374,0,0" VerticalAlignment="Top" IsChecked="False" Foreground="White" Checked="RandomItemCheckBox_Checked" Unchecked="RandomItemCheckBox_Unchecked"/>
+            <RadioButton x:Name="LegendaryRadioButton" Content="Legendary" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" GroupName="RarityTypes" Foreground="#FFCF6700"/>
+            <RadioButton x:Name="RareRadioButton" Content="Rare" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" GroupName="RarityTypes" Foreground="#FFB8BF26"/>
+            <RadioButton x:Name="MagicRadioButton" Content="Magic" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" GroupName="RarityTypes" Foreground="#FF5161FF"/>
+            <RadioButton x:Name="NormalRadioButton" Content="Normal" HorizontalAlignment="Left" Margin="10,307,0,0" VerticalAlignment="Top" GroupName="RarityTypes" Foreground="#FFA8A8A8" IsChecked="True"/>
+            <StatusBarItem x:Name="LevelLabel" Foreground="#fff" HorizontalContentAlignment="Left" Margin="10,76,130,334" Content="Level:"/>
+            <StatusBarItem x:Name="LevelString" Foreground="#fff" HorizontalContentAlignment="Right" Margin="60,76,10,334" Content="Level"/>
+            <ListBox x:Name="ItemTypeListBox" Height="68" Margin="10,234,96,0" VerticalAlignment="Top">
+                <ListBoxItem Content="All" IsSelected="True"/>
+                <ListBoxItem Content="AllWeapon"/>
+                <ListBoxItem Content="AllArmor"/>
+                <ListBoxItem Content="OneHand"/>
+                <ListBoxItem Content="TwoHand"/>
+                <ListBoxItem Content="Helm"/>
+                <ListBoxItem Content="Shoulders"/>
+                <ListBoxItem Content="Chest"/>
+                <ListBoxItem Content="Bracers"/>
+                <ListBoxItem Content="Gloves"/>
+                <ListBoxItem Content="Pants"/>
+                <ListBoxItem Content="Boots"/>
+                <ListBoxItem Content="Neck"/>
+                <ListBoxItem Content="Ring"/>
+                <ListBoxItem Content="Shield"/>
+                <ListBoxItem Content="Source"/>
+            </ListBox>
+            <ListBox x:Name="ClassTypeListBox" Height="68" Margin="96,234,10,0" VerticalAlignment="Top">
+                <ListBoxItem Content="All Classes" IsSelected="True"/>
+                <ListBoxItem Content="Class 0"/>
+                <ListBoxItem Content="Class 1"/>
+                <ListBoxItem Content="Class 2"/>
+                <ListBoxItem Content="Class 3"/>
+            </ListBox>
+            <TextBox x:Name="LevelTextBox" HorizontalAlignment="Left" Height="23" Margin="96,332,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="84" KeyDown="TextBox_KeyDown" LostFocus="TextBox_LostFocus"/>
+            <Label x:Name="LevelBoxLabel" Content="Level:" HorizontalAlignment="Left" Margin="91,307,0,0" VerticalAlignment="Top" Height="27" Width="84" Foreground="White"/>
+        </Grid>
+        <TextBlock x:Name="LoadingBlock" HorizontalAlignment="Left" Margin="634,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="158" FontSize="28"><!-- Animates the text block's opacity. -->
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+        						Storyboard.TargetName="LoadingBlock" 
+        						Storyboard.TargetProperty="(UIElement.Opacity)"
+        						From="1.0" To="0.0" Duration="0:0:1" 
+        						AutoReverse="True" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers><Run Text="Loading . . ."/></TextBlock>
+    </Grid>
+</Window>

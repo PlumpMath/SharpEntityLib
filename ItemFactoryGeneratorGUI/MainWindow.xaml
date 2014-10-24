@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ItemFactoryGeneratorGUI" x:Class="ItemFactoryGeneratorGUI.MainWindow"
+        Title="MainWindow" Height="593" Width="843" MinWidth="843" MinHeight="300">
+    <Grid>
+        <Grid x:Name="ItemDisplayGrid" Margin="0,0,0,133" Background="#FFB8B8B8">
+            <local:SharpItemInfo x:Name="ItemDisplayInfo" Width="Auto" Height="Auto" Margin="0,0,0,10"/>
+        </Grid>
+        <Grid x:Name="ButtonGrid" Height="133" VerticalAlignment="Bottom" Background="#FF636363">
+            <Button x:Name="MakeItemButton" Content="Make Item" Margin="0,10,10,0" VerticalAlignment="Top" Height="34" HorizontalAlignment="Right" Width="95" Click="MakeItemButton_Click"/>
+            <TextBox x:Name="ItemNameTextBox" Height="23" Margin="10,27,0,0" TextWrapping="Wrap" Text="Item Name" VerticalAlignment="Top" HorizontalAlignment="Left" Width="148"/>
+            <Label x:Name="ItemNameLabel" Content="Item Name:" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top"/>
+            <ListBox x:Name="TypeListBox" HorizontalAlignment="Left" Height="117" Margin="236,6,0,0" VerticalAlignment="Top" Width="100" SelectedIndex="0">
+                <ListBoxItem Content="OneHand"/>
+                <ListBoxItem Content="TwoHand"/>
+                <ListBoxItem Content="Helm"/>
+                <ListBoxItem Content="Shoulders"/>
+                <ListBoxItem Content="Chest"/>
+                <ListBoxItem Content="Bracers"/>
+                <ListBoxItem Content="Gloves"/>
+                <ListBoxItem Content="Pants"/>
+                <ListBoxItem Content="Boots"/>
+                <ListBoxItem Content="Neck"/>
+                <ListBoxItem Content="Ring"/>
+                <ListBoxItem Content="Shield"/>
+                <ListBoxItem Content="Source"/>
+            </ListBox>
+            <Label x:Name="ItemType" Content="Item Type:" HorizontalAlignment="Left" Margin="166,2,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="BeingType" Content="Being Type:" HorizontalAlignment="Left" Margin="349,2,0,0" VerticalAlignment="Top"/>
+            <ListBox x:Name="BeingTypeListBox" HorizontalAlignment="Left" Height="117" Margin="425,6,0,0" VerticalAlignment="Top" Width="100" SelectedIndex="0">
+                <ListBoxItem Content="BlackMage"/>
+                <ListBoxItem Content="WhiteMage"/>
+                <ListBoxItem Content="Warrior"/>
+                <ListBoxItem Content="Rogue"/>
+            </ListBox>
+            <TextBox x:Name="ItemLevelTextBox" Height="23" Margin="10,81,0,0" TextWrapping="Wrap" Text="Item Level" VerticalAlignment="Top" HorizontalAlignment="Left" Width="148"/>
+            <Label x:Name="LevelLabel" Content="Item Level:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>
